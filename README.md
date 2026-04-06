@@ -44,4 +44,31 @@ source venv/bin/activate
 pip install -r requirements.txt
 python3 app.py
 
+Open in browser:
+
+http://127.0.0.1:5000
+🧪 Example URLs
+✅ Safe
+https://www.google.com
+⚠️ Suspicious
+http://paypal-login.verify-account-security.com
+
+📈 Future Improvements
+🤖 Machine Learning integration
+📡 Real-time threat intelligence
+🗄️ Database logging
+🌍 Live deployment
+🧠 Deep learning model
+👨‍💻 Author
+
+Gyanendra Singh Shakya
+📧 Email: gyanendrashakya44@gmail.com
+
+🔗 LinkedIn: www.linkedin.com/in/gyanendra-singh-shakya-a4194a3a9
+
+💻 GitHub: https://mrsingh1912-cpu.github.io/GSS-CYBER-WEBSITE/
+
+⚠️ Disclaimer
+
+This project is developed for educational and defensive cybersecurity purposes only.
 
