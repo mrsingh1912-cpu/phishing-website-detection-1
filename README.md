@@ -1,24 +1,68 @@
+# 🚀 Phishing Website Detection System (Next Level)
 
-# Phishing Website Detection - Next Level
+A cybersecurity project that detects phishing and suspicious websites using URL analysis, domain intelligence, and security checks.
 
-Includes:
-- Rule-based phishing URL analysis
-- Better UI with red/yellow/green states, animated risk bar, loader
-- WHOIS lookup
-- SSL certificate check
-- Optional Google Safe Browsing hook
-- Chrome extension starter
+## 🔥 Features
 
-## Run
+- ✅ Rule-based phishing URL detection  
+- 🎨 Advanced UI (Red / Yellow / Green Risk Indicator)  
+- 📊 Animated Risk Score Meter  
+- 🔍 Suspicious keyword detection  
+- 🏷️ Brand mismatch detection  
+- 🌐 WHOIS lookup  
+- 🔒 SSL/TLS certificate check  
+- ⏳ Domain age analysis  
+- ⚡ Optional Google Safe Browsing API  
+- 🧩 Chrome Extension Support  
+
+## 🛠️ Tech Stack
+
+- Python  
+- Flask  
+- HTML, CSS, JavaScript  
+- tldextract  
+- python-whois  
+- requests  
+
+## 📂 Project Structure
+phishing-website-detection/
+│
+├── app.py
+├── README.md
+├── requirements.txt
+│
+├── detector/
+├── templates/
+├── static/
+└── extension/
+
+## ⚙️ Installation & Run
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 python3 app.py
-```
+Open in browser:
+http://127.0.0.1:5000🧪 Example URLs
+✅ Safe
+https://www.google.com
+⚠️ Suspicious
+http://paypal-login.verify-account-security.com
 
-## Chrome extension
-Load the `extension/` folder from `chrome://extensions` using **Load unpacked**.
+Future Improvements
+🤖 Machine Learning integration
+📡 Real-time threat intelligence
+🗄️ Database logging
+🌍 Live deployment
+🧠 Deep learning model
 
-## Safe Browsing API
-Add your API key in `detector/reputation.py` if you want that check enabled.
+👨‍💻 Author
+Gyanendra Singh Shakya
+📧 Email: gyanendrashakya44@gmail.com
+🔗 LinkedIn: www.linkedin.com/in/gyanendra-singh-shakya-a4194a3a9
+💻 GitHub: https://mrsingh1912-cpu.github.io/GSS-CYBER-WEBSITE/
+
+⚠️ Disclaimer
+This project is developed for educational and defensive cybersecurity purposes only.
+
