@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Phishing Detector</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;padding:14px;width:320px;background:#081221;color:#fff}
+button{width:100%;padding:10px;border:none;border-radius:10px;background:#38bdf8;color:#062036;font-weight:700;cursor:pointer}
+.box{margin-top:12px;padding:10px;border:1px solid #294262;border-radius:10px;background:#0f1d33}
+.muted{color:#b8c5e1;font-size:13px}
+</style>
+</head>
+<body>
+<h3>Phishing URL Detector</h3>
+<p class="muted">This extension sends the current tab URL to your local Flask app on 127.0.0.1:5000.</p>
+<button id="analyzeBtn">Analyze Current Site</button>
+<div id="result" class="box">No analysis yet.</div>
+<script src="popup.js"></script>
+</body>
+</html>

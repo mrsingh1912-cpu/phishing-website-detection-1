@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Website Detection - Next Level</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="container">
+    <div class="hero card">
+        <h1>Phishing Website Detection</h1>
+        <p class="subtitle">Analyze a website URL with rule-based checks, WHOIS, SSL, and optional reputation intelligence.</p>
+        <form method="POST" class="analyze-form" onsubmit="showLoader()">
+            <label for="url">Website URL</label>
+            <div class="input-row">
+                <input type="text" id="url" name="url" placeholder="example.com/login" value="{{ submitted_url }}">
+                <button type="submit">Analyze</button>
+            </div>
+        </form>
+        <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+            <span>Analyzing URL...</span>
+        </div>
+    </div>
+
+    {% if result %}
+    <div class="card result-card {{ result.risk_level|lower|replace(' ', '-') }}">
+        <div class="result-top">
+            <div>
+                <h2>Result</h2>
+                <p><strong>Prediction:</strong> {{ result.prediction }}</p>
+                <p><strong>Risk Level:</strong> {{ result.risk_level }}</p>
+                <p><strong>Risk Score:</strong> {{ result.risk_score }}/100</p>
+            </div>
+            <div class="badge {{ result.risk_level|lower|replace(' ', '-') }}">{{ result.risk_level }}</div>
+        </div>
+
+        <div class="riskbar-wrap">
+            <div class="riskbar">
+                <div class="riskfill {{ result.risk_level|lower|replace(' ', '-') }}" style="width: {{ result.risk_score }}%;"></div>
+            </div>
+            <span class="risktext">Risk Meter</span>
+        </div>
+
+        <div class="two-col">
+            <div>
+                <h3>Reasons</h3>
+                <ul>
+                    {% for reason in result.reasons %}
+                    <li>{{ reason }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <h3>Security Intelligence</h3>
+                <div class="intel-grid">
+                    {% for key, value in result.intelligence.items() %}
+                    <div class="feature-item">
+                        <span class="feature-key">{{ key }}</span>
+                        <span class="feature-value">{{ value }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <h3>Feature Breakdown</h3>
+        <div class="features">
+            {% for key, value in result.features.items() %}
+            <div class="feature-item">
+                <span class="feature-key">{{ key }}</span>
+                <span class="feature-value">{{ value }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+<script>
+function showLoader() {
+    document.getElementById('loader').classList.remove('hidden');
+}
+</script>
+</body>
+</html>
