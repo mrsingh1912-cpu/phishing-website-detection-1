@@ -45,7 +45,9 @@ pip install -r requirements.txt
 python3 app.py
 
 Open in browser:
-http://127.0.0.1:5000🧪 Example URLs
+http://127.0.0.1:5000
+
+## 🧪 Example URLs
 ✅ Safe
 https://www.google.com
 ⚠️ Suspicious
